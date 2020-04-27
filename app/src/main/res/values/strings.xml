@@ -17,4 +17,12 @@
     <string name="danger_exit">آيا مطمين هستيد كه ميخواهيد از برنامه خارج شويد؟</string>
     <string name="yes">بله</string>
     <string name="no">خير</string>
+    <string name="persian">فارسي</string>
+    <string name="english">انگليسي</string>
+    <string name="language">انتخاب زبان :</string>
+    <string name="red">قرمز</string>
+    <string name="green">سبز</string>
+    <string name="blue">آبي</string>
+    <string name="background_color">رنگ پس زمينه</string>
+    <string name="ok_button">تاييد</string>
 </resources>

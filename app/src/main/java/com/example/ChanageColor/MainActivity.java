@@ -75,7 +75,7 @@ public class MainActivity extends AppCompatActivity {
                             public void onClick(DialogInterface dialog, int which) {
                             }
                         })
-                        .setIcon(android.R.drawable.stat_notify_error)
+                        .setIcon(android.R.drawable.ic_dialog_info)
                         .show();
                 return true;
             case R.id.setting:
