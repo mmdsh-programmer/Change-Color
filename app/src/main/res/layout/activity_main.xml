@@ -176,6 +176,7 @@
         android:paddingLeft="70dp"
         android:paddingRight="70dp"
         android:layout_margin="10dp"
+        android:onClick="onAccept"
         android:layout_below="@id/textView5"/>
 
     <ProgressBar
@@ -184,6 +185,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_margin="10dp"
-        android:layout_below="@id/button"/>
+        android:layout_below="@id/button"
+        android:max="4"/>
 
 </RelativeLayout>

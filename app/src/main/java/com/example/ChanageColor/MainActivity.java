@@ -8,10 +8,13 @@ import android.content.Context;
 import android.content.DialogInterface;
 import android.graphics.Color;
 import android.os.Bundle;
+import android.os.CountDownTimer;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
+import android.view.View;
 import android.widget.Button;
+import android.widget.ProgressBar;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -19,12 +22,21 @@ import android.widget.Toast;
 public class MainActivity extends AppCompatActivity {
     RelativeLayout back;
     TextView layoutText;
+    ProgressBar mProgressBar;
+    CountDownTimer mCountDownTimer;
+    int i=0;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         back = findViewById(R.id.back);
         layoutText = findViewById(R.id.hello_text);
+        findViewById(R.id.hello_text).setVisibility(View.VISIBLE);
+        findViewById(R.id.language_section).setVisibility(View.INVISIBLE);
+        findViewById(R.id.color_setting).setVisibility(View.INVISIBLE);
+        findViewById(R.id.textView5).setVisibility(View.INVISIBLE);
+        findViewById(R.id.button).setVisibility(View.INVISIBLE);
+        findViewById(R.id.progressBar).setVisibility(View.INVISIBLE);
     }
 
     @Override
@@ -79,10 +91,41 @@ public class MainActivity extends AppCompatActivity {
                         .show();
                 return true;
             case R.id.setting:
-
+                findViewById(R.id.hello_text).setVisibility(View.INVISIBLE);
+                findViewById(R.id.language_section).setVisibility(View.VISIBLE);
+                findViewById(R.id.color_setting).setVisibility(View.VISIBLE);
+                findViewById(R.id.textView5).setVisibility(View.VISIBLE);
+                findViewById(R.id.button).setVisibility(View.VISIBLE);
+                findViewById(R.id.progressBar).setVisibility(View.VISIBLE);
                 return true;
             default:
                 return super.onOptionsItemSelected(item);
         }
+    }
+
+    public  void onAccept(View view){
+        mProgressBar=findViewById(R.id.progressBar);
+        mProgressBar.setProgress(i);
+        mCountDownTimer=new CountDownTimer(5100,1000) {
+            @Override
+            public void onTick(long millisUntilFinished) {
+                i++;
+                mProgressBar.setProgress(i);
+            }
+            @Override
+            public void onFinish() {
+                i++;
+                mProgressBar.setProgress(0);
+                findViewById(R.id.hello_text).setVisibility(View.VISIBLE);
+                findViewById(R.id.language_section).setVisibility(View.INVISIBLE);
+                findViewById(R.id.color_setting).setVisibility(View.INVISIBLE);
+                findViewById(R.id.textView5).setVisibility(View.INVISIBLE);
+                findViewById(R.id.button).setVisibility(View.INVISIBLE);
+                findViewById(R.id.progressBar).setVisibility(View.INVISIBLE);
+                i=0;
+            }
+        };
+        mCountDownTimer.start();
+
     }
 }
