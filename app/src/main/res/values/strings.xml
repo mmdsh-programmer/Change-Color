@@ -1,0 +1,20 @@
+<resources>
+    <string name="app_name">پالت رنگ</string>
+    <string name="about_us">درباره سازنده</string>
+    <string name="setting">تنظیمات</string>
+    <string name="night_mode">حالت شب</string>
+    <string name="exit">خروج</string>
+    <string name="startup_text">
+         در این برنامه شما میتوانید از بخش منوی بالا سمت راست
+        و سپس انتخاب تنظيمات پالت رنگ را باز كرده و رنگ خود را انتخاب كنيد.
+    </string>
+    <string name="dialog_title">درباره سازنده</string>
+    <string name="dialog_description">
+        اين برنامه توسط محمد شاكري طراحي و توسعه داده شده است . هدف از توسعه اين نرم افزار نمره كمكي ميباشد. \n\nتلگرام : Mmd_Sh_79@
+    </string>
+    <string name="ok">خيلي خب!</string>
+    <string name="danger">اخطار</string>
+    <string name="danger_exit">آيا مطمين هستيد كه ميخواهيد از برنامه خارج شويد؟</string>
+    <string name="yes">بله</string>
+    <string name="no">خير</string>
+</resources>
