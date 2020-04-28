@@ -18,11 +18,39 @@
     <string name="yes">بله</string>
     <string name="no">خير</string>
     <string name="persian">فارسي</string>
-    <string name="english">انگليسي</string>
+    <string name="english">انگلیسی</string>
     <string name="language">انتخاب زبان :</string>
     <string name="red">قرمز</string>
     <string name="green">سبز</string>
     <string name="blue">آبي</string>
     <string name="background_color">رنگ پس زمينه</string>
     <string name="ok_button">تاييد</string>
+    <string name="app_name_2">Color Palette</string>
+    <string name="startup_text_2">
+         In this App you can use the menu at the top right
+         And then open the color palette settings and select your color.
+    </string>
+    <string name="about_us_2">About Developer</string>
+    <string name="setting_2">Setting</string>
+    <string name="night_mode_2">Night Mode</string>
+    <string name="exit_2">Exit</string>
+    <string name="dialog_title_2">About Developer</string>
+    <string name="dialog_description_2">
+        This program is designed and developed by Mohammad Shakeri.
+        The purpose of developing this software is auxiliary score.\n\n
+        Telegram: Mmd_Sh_79 @
+    </string>
+    <string name="ok_2">OK</string>
+    <string name="danger_2">Warning</string>
+    <string name="danger_exit_2">Are you sure you want to exit?</string>
+    <string name="yes_2">Yes</string>
+    <string name="no_2">No</string>
+    <string name="language_2">Choose Language:</string>
+    <string name="persian_2">Persian</string>
+    <string name="english_2">English</string>
+    <string name="red_2">Red</string>
+    <string name="green_2">Green</string>
+    <string name="blue_2">Blue</string>
+    <string name="background_color_2">Background Color</string>
+    <string name="ok_button_2">Confirm</string>
 </resources>
