@@ -18,6 +18,7 @@ import android.widget.Button;
 import android.widget.ProgressBar;
 import android.widget.RadioButton;
 import android.widget.RelativeLayout;
+import android.widget.SeekBar;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -39,6 +40,12 @@ public class MainActivity extends AppCompatActivity {
     TextView setting_background;
     Button confirm;
     String app_language;
+    SeekBar change_red;
+    SeekBar change_green;
+    SeekBar change_blue;
+    int red_amount;
+    int green_amount;
+    int blue_amount;
     int i=0;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -54,6 +61,9 @@ public class MainActivity extends AppCompatActivity {
         blue = findViewById(R.id.textView4);
         setting_background = findViewById(R.id.textView5);
         confirm = findViewById(R.id.button);
+        change_red = findViewById(R.id.seekBar);
+        change_green = findViewById(R.id.seekBar2);
+        change_blue = findViewById(R.id.seekBar3);
         findViewById(R.id.hello_text).setVisibility(View.VISIBLE);
         findViewById(R.id.language_section).setVisibility(View.INVISIBLE);
         findViewById(R.id.color_setting).setVisibility(View.INVISIBLE);
@@ -61,6 +71,107 @@ public class MainActivity extends AppCompatActivity {
         findViewById(R.id.button).setVisibility(View.INVISIBLE);
         findViewById(R.id.progressBar).setVisibility(View.INVISIBLE);
         app_language = "fa";
+        red_amount = 0;
+        green_amount = 0;
+        blue_amount = 0;
+
+        change_red.setOnSeekBarChangeListener(new SeekBar.OnSeekBarChangeListener() {
+            @Override
+            public void onProgressChanged(SeekBar seekBar, int progress, boolean fromUser) {
+                if (app_language == "fa"){
+                    red.setText(getText(R.string.red) + " : " + progress);
+                }
+                else if (app_language == "en"){
+                    red.setText(getText(R.string.red_2) + " : " + progress);
+                }
+                red_amount = progress;
+                setting_background.setBackgroundColor(Color.rgb(red_amount,green_amount,blue_amount));
+            }
+
+            @Override
+            public void onStartTrackingTouch(SeekBar seekBar) {
+
+            }
+
+            @Override
+            public void onStopTrackingTouch(SeekBar seekBar) {
+
+            }
+        });
+
+        change_green.setOnSeekBarChangeListener(new SeekBar.OnSeekBarChangeListener() {
+            @Override
+            public void onProgressChanged(SeekBar seekBar, int progress, boolean fromUser) {
+                if (app_language == "fa"){
+                    green.setText(getText(R.string.green) + " : " + progress);
+                }
+                else if (app_language == "en"){
+                    green.setText(getText(R.string.green_2) + " : " + progress);
+                }
+                green_amount = progress;
+                setting_background.setBackgroundColor(Color.rgb(red_amount,green_amount,blue_amount));
+            }
+
+            @Override
+            public void onStartTrackingTouch(SeekBar seekBar) {
+
+            }
+
+            @Override
+            public void onStopTrackingTouch(SeekBar seekBar) {
+
+            }
+        });
+
+        change_blue.setOnSeekBarChangeListener(new SeekBar.OnSeekBarChangeListener() {
+            @Override
+            public void onProgressChanged(SeekBar seekBar, int progress, boolean fromUser) {
+                if (app_language == "fa"){
+                    blue.setText(getText(R.string.blue) + " : " + progress);
+                }
+                else if (app_language == "en"){
+                    blue.setText(getText(R.string.blue_2) + " : " + progress);
+                }
+                blue_amount = progress;
+                setting_background.setBackgroundColor(Color.rgb(red_amount,green_amount,blue_amount));
+            }
+
+            @Override
+            public void onStartTrackingTouch(SeekBar seekBar) {
+
+            }
+
+            @Override
+            public void onStopTrackingTouch(SeekBar seekBar) {
+
+            }
+        });
+    }
+
+    public void night_mode_theme(){
+        back.setBackgroundColor(Color.BLACK);
+        layoutText.setTextColor(Color.parseColor("#FFFFFF"));
+        language.setTextColor(Color.parseColor("#FFFFFF"));
+        fa.setTextColor(Color.parseColor("#FFFFFF"));
+        en.setTextColor(Color.parseColor("#FFFFFF"));
+        red.setTextColor(Color.parseColor("#FFFFFF"));
+        green.setTextColor(Color.parseColor("#FFFFFF"));
+        blue.setTextColor(Color.parseColor("#FFFFFF"));
+        setting_background.setTextColor(Color.parseColor("#FFFFFF"));
+        confirm.setTextColor(Color.parseColor("#FFFFFF"));
+    }
+
+    public void day_mode_theme(){
+        back.setBackgroundColor(Color.parseColor("#FFFFFF"));
+        layoutText.setTextColor(Color.parseColor("#757575"));
+        language.setTextColor(Color.BLACK);
+        fa.setTextColor(Color.BLACK);
+        en.setTextColor(Color.BLACK);
+        red.setTextColor(Color.parseColor("#757575"));
+        green.setTextColor(Color.parseColor("#757575"));
+        blue.setTextColor(Color.parseColor("#757575"));
+        setting_background.setTextColor(Color.parseColor("#757575"));
+        confirm.setTextColor(Color.BLACK);
     }
 
     @Override
@@ -109,29 +220,23 @@ public class MainActivity extends AppCompatActivity {
             case R.id.night_mode:
                 if (item.isChecked()){
                     item.setChecked(false);
-                    back.setBackgroundColor(Color.parseColor("#FFFFFF"));
-                    layoutText.setTextColor(Color.parseColor("#757575"));
-                    language.setTextColor(Color.BLACK);
-                    fa.setTextColor(Color.BLACK);
-                    en.setTextColor(Color.BLACK);
-                    red.setTextColor(Color.parseColor("#757575"));
-                    green.setTextColor(Color.parseColor("#757575"));
-                    blue.setTextColor(Color.parseColor("#757575"));
-                    setting_background.setTextColor(Color.parseColor("#757575"));
-                    confirm.setTextColor(Color.BLACK);
+                    day_mode_theme();
+                    red_amount = 255;
+                    green_amount = 255;
+                    blue_amount = 255;
+                    change_red.setProgress(255);
+                    change_green.setProgress(255);
+                    change_blue.setProgress(255);
                 }
                 else{
                     item.setChecked(true);
-                    back.setBackgroundColor(Color.BLACK);
-                    layoutText.setTextColor(Color.parseColor("#FFFFFF"));
-                    language.setTextColor(Color.parseColor("#FFFFFF"));
-                    fa.setTextColor(Color.parseColor("#FFFFFF"));
-                    en.setTextColor(Color.parseColor("#FFFFFF"));
-                    red.setTextColor(Color.parseColor("#FFFFFF"));
-                    green.setTextColor(Color.parseColor("#FFFFFF"));
-                    blue.setTextColor(Color.parseColor("#FFFFFF"));
-                    setting_background.setTextColor(Color.parseColor("#FFFFFF"));
-                    confirm.setTextColor(Color.parseColor("#FFFFFF"));
+                    night_mode_theme();
+                    red_amount = 0;
+                    green_amount = 0;
+                    blue_amount = 0;
+                    change_red.setProgress(0);
+                    change_green.setProgress(0);
+                    change_blue.setProgress(0);
                 };
                 return true;
             case R.id.exit:
@@ -180,6 +285,16 @@ public class MainActivity extends AppCompatActivity {
                 findViewById(R.id.textView5).setVisibility(View.VISIBLE);
                 findViewById(R.id.button).setVisibility(View.VISIBLE);
                 findViewById(R.id.progressBar).setVisibility(View.VISIBLE);
+                if (app_language == "fa"){
+                    red.setText(getText(R.string.red) + " : " + red_amount);
+                    green.setText(getText(R.string.green) + " : " + green_amount);
+                    blue.setText(getText(R.string.blue) + " : " + blue_amount);
+                }
+                else if (app_language == "en"){
+                    red.setText(getText(R.string.red_2) + " : " + red_amount);
+                    green.setText(getText(R.string.green_2) + " : " + green_amount);
+                    blue.setText(getText(R.string.blue_2) + " : " + blue_amount);
+                }
                 return true;
             default:
                 return super.onOptionsItemSelected(item);
@@ -221,6 +336,7 @@ public class MainActivity extends AppCompatActivity {
                     setting_background.setText(R.string.background_color);
                     language.setTextSize(TypedValue.COMPLEX_UNIT_SP,20);
                     app_language = "fa";
+                    setTitle(R.string.app_name);
                 }
                 else if (en.isChecked()){
                     layoutText.setText(R.string.startup_text_2);
@@ -238,11 +354,22 @@ public class MainActivity extends AppCompatActivity {
                     setting_background.setText(R.string.background_color_2);
                     language.setTextSize(TypedValue.COMPLEX_UNIT_SP,15);
                     app_language = "en";
+                    setTitle(R.string.app_name_2);
                 }
                 i=0;
+                back.setBackgroundColor(Color.rgb(red_amount,green_amount,blue_amount));
+                if (red_amount == 0 && green_amount ==0 && blue_amount == 0)
+                {
+                    night_mode_theme();
+                }
+                if (red_amount == 255 && green_amount == 255 && blue_amount == 255){
+                    day_mode_theme();
+                }
             }
         };
         mCountDownTimer.start();
 
     }
+
+
 }

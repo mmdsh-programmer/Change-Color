@@ -99,6 +99,7 @@
                 android:layout_height="wrap_content"
                 android:background="@android:color/holo_red_light"
                 android:minWidth="90dp"
+                android:max="255"
                 android:scrollbarStyle="outsideInset" />
         </LinearLayout>
 
@@ -125,7 +126,8 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:background="@android:color/holo_green_light"
-                android:minWidth="90dp" />
+                android:minWidth="90dp"
+                android:max="255"/>
         </LinearLayout>
 
         <LinearLayout
@@ -151,7 +153,8 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:background="@android:color/holo_blue_light"
-                android:minWidth="90dp" />
+                android:minWidth="90dp"
+                android:max="255"/>
         </LinearLayout>
 
     </LinearLayout>
@@ -160,13 +163,20 @@
         android:id="@+id/textView5"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_weight="1"
         android:layout_below="@id/color_setting"
-        android:textSize="20sp"
+        android:layout_marginStart="10dp"
+        android:layout_marginLeft="10dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginEnd="10dp"
+        android:layout_marginRight="10dp"
+        android:layout_marginBottom="10dp"
+        android:layout_weight="1"
+        android:background="@android:color/black"
         android:gravity="center"
-        android:layout_margin="10dp"
         android:padding="15dp"
-        android:text="@string/background_color" />
+        android:text="@string/background_color"
+        android:textColor="#757575"
+        android:textSize="20sp" />
 
     <Button
         android:id="@+id/button"
